@@ -113,6 +113,61 @@
   }
   .callout b{color:var(--navy);font-weight:600}
 
+  /* ============ TABS ============ */
+  .tabs{display:flex;gap:6px;border-bottom:1px solid var(--gray200);margin:44px 0 0;flex-wrap:wrap}
+  .tab{
+    appearance:none;border:0;background:none;cursor:pointer;font-family:inherit;
+    font-size:14px;font-weight:600;color:var(--gray500);letter-spacing:.02em;
+    padding:14px 18px;border-bottom:2px solid transparent;margin-bottom:-1px;
+    transition:color .2s var(--ease);
+  }
+  .tab:hover{color:var(--navy)}
+  .tab.active{color:var(--navy);border-bottom-color:var(--gold)}
+  .tab:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;border-radius:6px}
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .3s var(--ease)}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+  /* ============ MCP TAB ============ */
+  .mcp-intro{margin-top:38px;max-width:66ch}
+  .mcp-intro h2{font-size:26px;font-weight:700;letter-spacing:-.01em;margin:0 0 12px;color:var(--navy)}
+  .mcp-intro p{font-size:16px;font-weight:300;line-height:1.65;color:var(--gray600);margin:0 0 18px}
+  .mcp-intro p b{font-weight:600;color:var(--navy)}
+  .mcp-guar{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+  .guar{
+    display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--gray600);
+    background:var(--white);border-radius:12px;box-shadow:var(--shadow-sm);
+    padding:13px 16px;max-width:360px;line-height:1.45;
+  }
+  .guar .gi{color:var(--gold);font-weight:700;flex:0 0 auto}
+  .guar b{color:var(--navy);font-weight:600}
+
+  .phase{margin-top:38px}
+  .phase-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .phase-tag{
+    font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:#fff;background:var(--navy);border-radius:6px;padding:6px 11px;
+  }
+  .phase-head h3{margin:0;font-size:19px;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+  .phase-status{font-size:11px;font-weight:600;letter-spacing:.04em;padding:4px 11px;border-radius:9999px}
+  .st-ready{background:#DCE4FF;color:var(--blue1)}
+  .st-mid{background:var(--gold100);color:var(--gold600)}
+  .st-new{background:var(--gray100);color:var(--gray600)}
+  .phase-sub{font-size:13.5px;color:var(--gray500);margin:8px 0 0}
+  .ucs{display:grid;gap:10px;margin-top:16px}
+  .uc{
+    background:var(--white);border-radius:14px;box-shadow:var(--shadow-sm);
+    padding:15px 18px;border-left:3px solid var(--gold);
+  }
+  .uc-ask{font-size:15px;font-weight:600;color:var(--navy);line-height:1.45}
+  .uc-get{font-size:14px;font-weight:400;color:var(--gray600);margin-top:6px;line-height:1.5}
+  .uc-get .arw{color:var(--blue1);font-weight:700}
+  .mcp-close{
+    margin-top:34px;padding:16px 18px;border-radius:12px;background:var(--gold100);
+    font-size:14px;color:var(--gold600);line-height:1.55;
+  }
+  .mcp-close b{color:var(--navy);font-weight:600}
+
   footer{
     margin-top:56px;padding-top:24px;border-top:1px solid var(--gray200);
     font-size:12.5px;color:var(--gray500);letter-spacing:.03em;
@@ -148,6 +203,13 @@
   <!-- BODY -->
   <div class="body">
     <div class="wrap">
+
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="feat" role="tab">Funcionalidades</button>
+        <button class="tab" data-tab="mcp" role="tab">MaximUs Conversacional</button>
+      </div>
+
+      <section id="feat" class="panel active" role="tabpanel">
 
       <div class="sec"><h2>Funcionalidades propuestas</h2><span class="rule"></span><span class="count">10 funciones</span></div>
 
@@ -293,6 +355,73 @@
         </div>
       </div>
 
+      </section>
+
+      <section id="mcp" class="panel" role="tabpanel">
+
+        <div class="mcp-intro">
+          <h2>MaximUs Conversacional</h2>
+          <p>Es una forma de usar MaximUs hablándole: el asesor pide lo que necesita en palabras —desde cualquier asistente de IA— y MaximUs lo resuelve trayendo siempre datos reales de la plataforma. No reemplaza a MaximUs, lo hace accesible sin tener que entrar y hacer clics.</p>
+          <div class="mcp-guar">
+            <div class="guar"><span class="gi">✓</span><span><b>Trae datos reales.</b> La IA interpreta el pedido y consulta MaximUs; no inventa información.</span></div>
+            <div class="guar"><span class="gi">✓</span><span><b>Respeta los permisos.</b> Cada asesor ve únicamente sus propios clientes y carteras.</span></div>
+          </div>
+          <p>Lo pensamos en <b>tres fases</b>, ordenadas de lo más rápido de lograr a lo más ambicioso.</p>
+        </div>
+
+        <!-- FASE 1 -->
+        <div class="phase">
+          <div class="phase-head">
+            <span class="phase-tag">Fase 1</span>
+            <h3>Consultas y descargas</h3>
+            <span class="phase-status st-ready">Casi listo</span>
+          </div>
+          <p class="phase-sub">Se apoya casi por completo en lo que MaximUs ya sabe hacer hoy.</p>
+          <div class="ucs">
+            <div class="uc"><div class="uc-ask">“Mostrame fondos en dólares, grado de inversión y con duración menor a 5 años”</div><div class="uc-get"><span class="arw">→</span> La lista de fondos que cumplen esas condiciones, lista para comparar o proponer.</div></div>
+            <div class="uc"><div class="uc-ask">“Listame bonos con vencimiento antes de 2030 y calificación mínima BBB”</div><div class="uc-get"><span class="arw">→</span> El listado de bonos filtrado según esos criterios.</div></div>
+            <div class="uc"><div class="uc-ask">“Traeme los rankings de estos fondos”</div><div class="uc-get"><span class="arw">→</span> Los rankings asociados a los fondos que le pasás.</div></div>
+            <div class="uc"><div class="uc-ask">“Comparame estos ETFs” (le pasás los ISINs)</div><div class="uc-get"><span class="arw">→</span> El comparativo armado, con su PDF o link.</div></div>
+            <div class="uc"><div class="uc-ask">“Descargame el factsheet de tal estrategia”</div><div class="uc-get"><span class="arw">→</span> El factsheet de esa estrategia, listo para enviar.</div></div>
+            <div class="uc"><div class="uc-ask">“Pasame el link de tal portafolio o propuesta”</div><div class="uc-get"><span class="arw">→</span> El link (o el PDF) de ese portafolio.</div></div>
+            <div class="uc"><div class="uc-ask">“Compará estos dos portafolios y agregá tal benchmark”</div><div class="uc-get"><span class="arw">→</span> La comparación de los portafolios con el benchmark incluido.</div></div>
+            <div class="uc"><div class="uc-ask">“Buscame en la biblioteca un informe sobre tal activo”</div><div class="uc-get"><span class="arw">→</span> El material relacionado que haya en la biblioteca.</div></div>
+          </div>
+        </div>
+
+        <!-- FASE 2 -->
+        <div class="phase">
+          <div class="phase-head">
+            <span class="phase-tag">Fase 2</span>
+            <h3>Armar propuestas y documentos por cliente</h3>
+            <span class="phase-status st-mid">Desarrollo acotado</span>
+          </div>
+          <p class="phase-sub">Reutiliza lógica que ya existe; requiere un pequeño desarrollo que la conecte de punta a punta.</p>
+          <div class="ucs">
+            <div class="uc"><div class="uc-ask">“Armame una propuesta con estos activos y estos porcentajes”</div><div class="uc-get"><span class="arw">→</span> La propuesta creada, con su PDF o link listo para enviar al cliente.</div></div>
+            <div class="uc"><div class="uc-ask">“Bajame el PDF de rentabilidad del cliente X del mes pasado”</div><div class="uc-get"><span class="arw">→</span> El resumen de rentabilidad de ese cliente en PDF.</div></div>
+          </div>
+        </div>
+
+        <!-- FASE 3 -->
+        <div class="phase">
+          <div class="phase-head">
+            <span class="phase-tag">Fase 3</span>
+            <h3>Preguntas sobre la cartera de clientes</h3>
+            <span class="phase-status st-new">Desarrollo nuevo</span>
+          </div>
+          <p class="phase-sub">Es el paso más ambicioso: preguntas que cruzan información de varios clientes. La información ya existe; hay que construir estas consultas.</p>
+          <div class="ucs">
+            <div class="uc"><div class="uc-ask">“¿Qué clientes tienen tal activo en cartera?”</div><div class="uc-get"><span class="arw">→</span> El listado de clientes con esa exposición.</div></div>
+            <div class="uc"><div class="uc-ask">“¿Cómo viene la cartera del cliente X este año?”</div><div class="uc-get"><span class="arw">→</span> El rendimiento de ese cliente en lo que va del año.</div></div>
+            <div class="uc"><div class="uc-ask">“¿Cuál fue mi cliente con mejor rendimiento en lo que va del año?”</div><div class="uc-get"><span class="arw">→</span> El cliente y su performance, ordenados por resultado.</div></div>
+          </div>
+        </div>
+
+        <div class="mcp-close"><b>Arranque sugerido:</b> implementar primero la <b>Fase 1</b> como MVP (es lo más rápido de demostrar porque se apoya en lo que ya existe), y luego avanzar hacia la Fase 2 y la Fase 3.</div>
+
+      </section>
+
       <footer>
         Borrador de trabajo para validación interna · LATAM ConsultUs · MaximUs Next Generation · Las prioridades y el orden de ejecución se definen en conjunto.
       </footer>
@@ -300,3 +429,17 @@
     </div>
   </div>
 </div>
+
+<script>
+  (function(){
+    var tabs = document.querySelectorAll('.tab');
+    tabs.forEach(function(t){
+      t.addEventListener('click', function(){
+        var id = t.getAttribute('data-tab');
+        document.querySelectorAll('.tab').forEach(function(x){ x.classList.toggle('active', x === t); });
+        document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id === id); });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  })();
+</script>
