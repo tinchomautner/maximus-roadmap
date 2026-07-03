@@ -162,6 +162,8 @@
   .uc-ask{font-size:15px;font-weight:600;color:var(--navy);line-height:1.45}
   .uc-get{font-size:14px;font-weight:400;color:var(--gray600);margin-top:6px;line-height:1.5}
   .uc-get .arw{color:var(--blue1);font-weight:700}
+  .uc-note{display:block;margin-top:6px;font-size:12.5px;color:var(--gray500);font-style:italic}
+  .phase-sub b{color:var(--navy);font-weight:600}
   .mcp-close{
     margin-top:34px;padding:16px 18px;border-radius:12px;background:var(--gold100);
     font-size:14px;color:var(--gold600);line-height:1.55;
@@ -365,6 +367,7 @@
           <div class="mcp-guar">
             <div class="guar"><span class="gi">✓</span><span><b>Trae datos reales.</b> La IA interpreta el pedido y consulta MaximUs; no inventa información.</span></div>
             <div class="guar"><span class="gi">✓</span><span><b>Respeta los permisos.</b> Cada asesor ve únicamente sus propios clientes y carteras.</span></div>
+            <div class="guar"><span class="gi">✓</span><span><b>Protege la base.</b> Solo trae consultas acotadas y filtradas; nunca vuelca toda la base de datos de la plataforma.</span></div>
           </div>
           <p>Lo pensamos en <b>tres fases</b>, ordenadas de lo más rápido de lograr a lo más ambicioso.</p>
         </div>
@@ -385,7 +388,7 @@
             <div class="uc"><div class="uc-ask">“Descargame el factsheet de tal estrategia”</div><div class="uc-get"><span class="arw">→</span> El factsheet de esa estrategia, listo para enviar.</div></div>
             <div class="uc"><div class="uc-ask">“Pasame el link de tal portafolio o propuesta”</div><div class="uc-get"><span class="arw">→</span> El link (o el PDF) de ese portafolio.</div></div>
             <div class="uc"><div class="uc-ask">“Compará estos dos portafolios y agregá tal benchmark”</div><div class="uc-get"><span class="arw">→</span> La comparación de los portafolios con el benchmark incluido.</div></div>
-            <div class="uc"><div class="uc-ask">“Buscame en la biblioteca un informe sobre tal activo”</div><div class="uc-get"><span class="arw">→</span> El material relacionado que haya en la biblioteca.</div></div>
+            <div class="uc"><div class="uc-ask">“Buscame en la biblioteca un informe sobre tal activo”</div><div class="uc-get"><span class="arw">→</span> El material relacionado que haya en la biblioteca.<span class="uc-note">En una primera etapa sale tal cual está; más adelante, con la marca, los colores y el texto propios del asesor.</span></div></div>
           </div>
         </div>
 
@@ -410,7 +413,7 @@
             <h3>Preguntas sobre la cartera de clientes</h3>
             <span class="phase-status st-new">Desarrollo nuevo</span>
           </div>
-          <p class="phase-sub">Es el paso más ambicioso: preguntas que cruzan información de varios clientes. La información ya existe; hay que construir estas consultas.</p>
+          <p class="phase-sub">Se apoya en la sección <b>Cuentas</b> de MaximUs —donde están las cuentas reales de cada cliente, conectadas con el estudio—. Es el paso más ambicioso: son preguntas que cruzan información de varios clientes, así que requieren construir consultas nuevas.</p>
           <div class="ucs">
             <div class="uc"><div class="uc-ask">“¿Qué clientes tienen tal activo en cartera?”</div><div class="uc-get"><span class="arw">→</span> El listado de clientes con esa exposición.</div></div>
             <div class="uc"><div class="uc-ask">“¿Cómo viene la cartera del cliente X este año?”</div><div class="uc-get"><span class="arw">→</span> El rendimiento de ese cliente en lo que va del año.</div></div>
